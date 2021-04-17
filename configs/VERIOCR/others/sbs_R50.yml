@@ -1,0 +1,7 @@
+_BASE_: ../Base-SBS.yml
+
+DATASETS:
+  NAMES: ("VERIOCR",)
+  TESTS: ("VERIOCR",)
+
+OUTPUT_DIR: logs/veriocr/sbs_R50

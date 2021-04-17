@@ -1,0 +1,11 @@
+_BASE_: ../Base-AGW.yml
+
+MODEL:
+  BACKBONE:
+    NAME: build_resnest_backbone
+
+DATASETS:
+  NAMES: ("VERIOCR",)
+  TESTS: ("VERIOCR",)
+
+OUTPUT_DIR: logs/veriocr/agw_S50

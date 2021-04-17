@@ -39,5 +39,6 @@ from .cuhk_sysu import cuhkSYSU
 from .veri import VeRi
 from .vehicleid import VehicleID, SmallVehicleID, MediumVehicleID, LargeVehicleID
 from .veriwild import VeRiWild, SmallVeRiWild, MediumVeRiWild, LargeVeRiWild
+from .veriocr import VERIOCR
 
 __all__ = [k for k in globals().keys() if "builtin" not in k and not k.startswith("_")]

@@ -1,0 +1,13 @@
+_BASE_: ../Base-bagtricks.yml
+
+MODEL:
+  BACKBONE:
+    DEPTH: 101x
+    WITH_IBN: True
+
+DATASETS:
+  NAMES: ("VERIOCR",)
+  TESTS: ("VERIOCR",)
+
+OUTPUT_DIR: logs/veriocr/bagtricks_R101-ibn
+

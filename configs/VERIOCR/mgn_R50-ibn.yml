@@ -1,0 +1,11 @@
+_BASE_: ../Base-MGN.yml
+
+MODEL:
+  BACKBONE:
+    WITH_IBN: True
+
+DATASETS:
+  NAMES: ("VERIOCR",)
+  TESTS: ("VERIOCR",)
+
+OUTPUT_DIR: logs/veriocr/mgn_R50-ibn
