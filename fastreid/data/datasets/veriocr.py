@@ -38,7 +38,6 @@ class VERIOCR(ImageDataset):
         self.train_txt = f"{self.dataset_dir}/images_train.txt"
         self.query_txt = f"{self.dataset_dir}/images_query.txt"
         self.gallery_txt = f"{self.dataset_dir}/images_gallery.txt"
-
         train = self.process_dir(self.train_txt)
         query = self.process_dir(self.query_txt, is_train=False)
         gallery = self.process_dir(self.gallery_txt, is_train=False)
@@ -50,9 +49,6 @@ class VERIOCR(ImageDataset):
         img_list = open(txt_file).readlines()
         for img_path in img_list:
             pid, camid, path = img_path.split(",")
-            if is_train:
-                pid = self.dataset_name + "_" + str(pid)
-                camid = self.dataset_name + "_" + str(camid)
-            data.append((osp.join(self.dataset_dir,path[:-1]), pid, camid))
+            data.append((osp.join(self.dataset_dir,path[:-1]), int(pid), int(camid)))
 
         return data

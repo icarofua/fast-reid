@@ -77,6 +77,9 @@ class ReidEvaluator(DatasetEvaluator):
         gallery_features = features[self._num_query:]
         gallery_pids = pids[self._num_query:]
         gallery_camids = camids[self._num_query:]
+        
+        query_features = query_features.numpy()
+        gallery_features = gallery_features.numpy()
 
         self._results = OrderedDict()
 
@@ -87,6 +90,8 @@ class ReidEvaluator(DatasetEvaluator):
             alpha = self.cfg.TEST.AQE.ALPHA
             query_features, gallery_features = aqe(query_features, gallery_features, qe_time, qe_k, alpha)
 
+        query_features = query_features.numpy()
+        gallery_features = gallery_features.numpy()
         dist = build_dist(query_features, gallery_features, self.cfg.TEST.METRIC)
 
         if self.cfg.TEST.RERANK.ENABLED:

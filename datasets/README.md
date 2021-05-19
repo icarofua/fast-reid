@@ -41,17 +41,3 @@ datasets/
         mask_train_v2/
         mask_test_v2/
 ```
-
-## Expected dataset structure for [VERIOCR](https://arxiv.org/abs/1911.05541)
-
-1. Download datasets to `datasets/`
-2. Extract dataset. The dataset structure would like:
-
-```bash
-datasets/
-    veriocr/
-        data/
-        images_train.txt
-	images_gallery.txt
-	images_query.txt
-```
